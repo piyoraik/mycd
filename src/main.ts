@@ -6,6 +6,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.useGlobalPipes(
     new ValidationPipe({
+      // DTOに宣言されているプロパティだけを後続処理に渡すことができる。
       whitelist: true
     })
   )
